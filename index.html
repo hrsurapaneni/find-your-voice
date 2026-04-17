@@ -749,6 +749,23 @@ body {
   line-height: 1.5;
 }
 
+.quote-inline {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-style: italic;
+  color: var(--text-muted);
+  max-width: 580px;
+  margin: 0 auto 28px;
+  line-height: 1.6;
+}
+
+.quote-inline-attr {
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-style: normal;
+  opacity: 0.7;
+}
+
 .cta-buttons {
   display: flex;
   gap: 12px;
@@ -1175,59 +1192,6 @@ body {
 </section>
 
 
-<!-- ═══════════ WHY ═══════════ -->
-<section class="why">
-  <div class="container why-inner">
-    <div class="reveal">
-      <span class="section-label">Skills for Life</span>
-      <h2 class="section-title">Beyond the Summer</h2>
-      <p class="why-subtitle">Skills That Last a Lifetime</p>
-      <p class="why-text">Research consistently shows that students who practice public speaking demonstrate stronger academic performance, greater self-confidence, and more advanced critical thinking. These are the skills colleges and careers reward.</p>
-      <ul class="why-benefits">
-        <li>
-          <svg class="benefit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>
-          <div class="benefit-content">
-            <h4>Confidence in any room</h4>
-            <p>Speak up in class, interviews, and life</p>
-          </div>
-        </li>
-        <li>
-          <svg class="benefit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>
-          <div class="benefit-content">
-            <h4>Stronger academic writing</h4>
-            <p>Argumentation sharpens essays and analysis</p>
-          </div>
-        </li>
-        <li>
-          <svg class="benefit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>
-          <div class="benefit-content">
-            <h4>Leadership presence</h4>
-            <p>Command attention and inspire action</p>
-          </div>
-        </li>
-      </ul>
-    </div>
-    <div class="reveal" style="display:flex;align-items:center;justify-content:center;">
-      <!-- Decorative illustration -->
-      <svg viewBox="0 0 260 260" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:260px;opacity:0.9;">
-        <circle cx="130" cy="130" r="110" fill="#3b5a3a" opacity="0.06"/>
-        <circle cx="130" cy="130" r="80" fill="#3b5a3a" opacity="0.06"/>
-        <!-- Open book -->
-        <path d="M80 160c10-5 25-8 50-2v60c-25-6-40-3-50 2v-60z" fill="#3b5a3a" opacity="0.15" stroke="#3b5a3a" stroke-width="1.5"/>
-        <path d="M180 160c-10-5-25-8-50-2v60c25-6 40-3 50 2v-60z" fill="#3b5a3a" opacity="0.1" stroke="#3b5a3a" stroke-width="1.5"/>
-        <!-- Lightbulb -->
-        <circle cx="130" cy="90" r="24" stroke="#3b5a3a" stroke-width="2.5" fill="none"/>
-        <path d="M120 110h20v8h-20z" fill="#3b5a3a" opacity="0.2"/>
-        <path d="M122 118h16" stroke="#3b5a3a" stroke-width="1.5"/>
-        <path d="M130 66v8M108 78l5 5M152 78l-5 5" stroke="#d4a892" stroke-width="2" stroke-linecap="round"/>
-        <!-- Stars -->
-        <circle cx="180" cy="70" r="3" fill="#d4a892" opacity="0.6"/>
-        <circle cx="75" cy="100" r="2.5" fill="#4a6e49" opacity="0.5"/>
-        <circle cx="190" cy="140" r="2" fill="#d4a892" opacity="0.4"/>
-      </svg>
-    </div>
-  </div>
-</section>
 
 
 <!-- ═══════════ SCHEDULE ═══════════ -->
@@ -1261,72 +1225,6 @@ body {
 </section>
 
 
-<!-- ═══════════ AUDIENCE ═══════════ -->
-<section class="audience">
-  <div class="container">
-    <div class="reveal">
-      <span class="section-label">Who Should Join</span>
-      <h2 class="section-title">Built for Every Student, Grades 3 Through 8</h2>
-    </div>
-    <div class="persona-grid reveal">
-      <div class="persona-card">
-        <div class="persona-emoji">&#x1F330;</div>
-        <h3>The Shy Student</h3>
-        <p>Who has great ideas but hasn't found the courage to share them yet</p>
-      </div>
-      <div class="persona-card">
-        <div class="persona-emoji">&#x1F3A4;</div>
-        <h3>The Natural Talker</h3>
-        <p>Who needs the structure and strategy to channel their energy effectively</p>
-      </div>
-      <div class="persona-card">
-        <div class="persona-emoji">&#x1F31F;</div>
-        <h3>The Future Leader</h3>
-        <p>Who wants to compete, persuade, and make a real difference someday</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- ═══════════ COMMUNITY ═══════════ -->
-<section class="community">
-  <div class="container community-inner">
-    <div class="reveal">
-      <span class="section-label">Community</span>
-      <h2 class="section-title">Born in Porter Ranch. Open to Young Voices Everywhere.</h2>
-      <p class="community-text">This program was born from a shared belief that every child deserves access to world-class communication training &mdash; regardless of background, experience, or geography. No prior speech or debate experience is required to join.</p>
-      <p class="community-text">Students from anywhere are warmly welcome to join our live virtual cohort. Cohort sizes are intentionally kept small to ensure personalized attention for every participant.</p>
-    </div>
-    <div class="community-stats reveal">
-      <div class="community-stat">
-        <div class="big-num">6</div>
-        <p>Grade Levels<br>Open to Grades 3&ndash;8</p>
-      </div>
-      <div class="community-stat">
-        <div class="big-num">$0</div>
-        <p>Program Cost<br>Completely free for all families</p>
-      </div>
-      <div class="community-stat">
-        <div class="big-num">4</div>
-        <p>Weeks of Training<br>Focused July 2026 intensive</p>
-      </div>
-      <div class="community-stat">
-        <div class="big-num">&#x2764;&#xFE0F;</div>
-        <p>Small Cohorts<br>Personalized attention</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- ═══════════ QUOTE ═══════════ -->
-<section class="quote-section">
-  <div class="container reveal">
-    <p class="quote-text">&ldquo;The goal isn't to make every student a champion debater &mdash; it's to make every student brave enough to try.&rdquo;</p>
-    <p class="quote-attr">&mdash; Sriram Surapaneni &amp; Maira Lala, Program Co-Founders</p>
-  </div>
-</section>
 
 
 <!-- ═══════════ CTA ═══════════ -->
@@ -1335,6 +1233,7 @@ body {
     <div class="reveal">
       <h2 class="section-title">Ready to Find Your Voice?</h2>
       <p class="cta-sub">Spots for the Summer 2026 Cohort are limited. Secure your child's place in this one-of-a-kind, volunteer-led program today &mdash; and give them a skill they'll carry for the rest of their lives.</p>
+      <p class="quote-inline">&ldquo;The goal isn't to make every student a champion debater &mdash; it's to make every student brave enough to try.&rdquo;<br><span class="quote-inline-attr">&mdash; Sriram &amp; Maira, Program Co-Founders</span></p>
       <div class="cta-notice">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>
         <p>Registration for the July 2026 Summer Intensive is now open. No experience necessary &mdash; just curiosity and a willingness to grow.</p>
@@ -1418,7 +1317,7 @@ body {
 <!-- ═══════════ FOOTER ═══════════ -->
 <footer class="footer">
   <div class="container">
-    <p>Empowering young voices: A volunteer initiative by Maira Lala and Sriram Surapaneni</p>
+    <p>Rooted in Porter Ranch. Open to Young Voices Everywhere. &middot; A volunteer initiative by Maira Lala and Sriram Surapaneni</p>
     <p style="margin-top:6px;opacity:0.7;">&copy; 2026 Find Your Voice. All rights reserved.</p>
   </div>
 </footer>
