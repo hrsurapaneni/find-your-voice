@@ -1,0 +1,1472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Find Your Voice. Change Your World.</title>
+<meta name="description" content="Free Summer 2026 Speech & Debate Intensive for Grades 3-8 in Porter Ranch, Los Angeles. A volunteer initiative by Sriram Surapaneni and Maira Lala.">
+<meta property="og:title" content="Find Your Voice. Change Your World.">
+<meta property="og:description" content="Free Summer 2026 Speech & Debate Intensive for Grades 3-8 in Porter Ranch, LA.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --green: #3b5a3a;
+  --green-light: #4a6e49;
+  --green-dark: #2d4a2c;
+  --cream: #FDFBF7;
+  --cream-dark: #f5f1ea;
+  --sand: #f5f0e8;
+  --text: #2D2D2D;
+  --text-muted: #6b6b6b;
+  --white: #ffffff;
+  --border: #e0dbd3;
+  --mint: #e8f3e0;
+  --coral: #d4a892;
+  --font-heading: 'Playfair Display', Georgia, serif;
+  --font-body: 'Plus Jakarta Sans', system-ui, sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  color: var(--text);
+  background: var(--cream);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* ── Animations ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes confettiDrift {
+  0% { transform: translateY(0) rotate(0deg); opacity: 0.7; }
+  100% { transform: translateY(30px) rotate(180deg); opacity: 0; }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Utility ── */
+.container {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.section-label {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  border: 1.5px solid var(--border);
+  padding: 5px 14px;
+  border-radius: 4px;
+  margin-bottom: 18px;
+}
+
+.section-title {
+  font-family: var(--font-heading);
+  font-weight: 400;
+  color: var(--green);
+  line-height: 1.12;
+}
+
+/* ── Buttons ── */
+.btn {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  font-weight: 600;
+  padding: 14px 30px;
+  border-radius: 6px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.btn-primary {
+  background: var(--green);
+  color: var(--white);
+}
+.btn-primary:hover {
+  background: var(--green-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(45,90,78,0.25);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--text);
+  border: 1.5px solid var(--border);
+}
+.btn-outline:hover {
+  border-color: var(--green);
+  color: var(--green);
+  transform: translateY(-2px);
+}
+
+
+/* ═══════════════════════════════════════
+   HERO
+   ═══════════════════════════════════════ */
+.hero {
+  position: relative;
+  padding: 100px 0 80px;
+  overflow: hidden;
+  min-height: 520px;
+}
+
+/* Decorative confetti dots */
+.hero-confetti {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+.confetti-dot {
+  position: absolute;
+  border-radius: 50%;
+  animation: confettiDrift 6s ease-in-out infinite alternate;
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 48px;
+  align-items: center;
+}
+
+.hero-text h1 {
+  font-family: var(--font-heading);
+  font-size: clamp(2.6rem, 5.5vw, 3.8rem);
+  font-weight: 400;
+  color: var(--green);
+  line-height: 1.1;
+  margin-bottom: 18px;
+  animation: fadeUp 0.8s ease both;
+}
+
+.hero-text .hero-sub {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  margin-bottom: 36px;
+  animation: fadeUp 0.8s ease 0.15s both;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  animation: fadeUp 0.8s ease 0.3s both;
+}
+
+/* Hero illustration — podium SVG */
+.hero-illustration {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeUp 0.9s ease 0.2s both;
+}
+
+.hero-illustration svg {
+  width: 100%;
+  max-width: 320px;
+  animation: float 4s ease-in-out infinite;
+}
+
+
+/* ═══════════════════════════════════════
+   ABOUT
+   ═══════════════════════════════════════ */
+.about {
+  background: var(--sand);
+  padding: 88px 0;
+}
+
+.about-inner {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 56px;
+  align-items: start;
+}
+
+.about .section-title {
+  font-size: clamp(1.9rem, 3.8vw, 2.7rem);
+  margin-bottom: 24px;
+}
+
+.about-text {
+  font-size: 1.02rem;
+  color: var(--text);
+  line-height: 1.78;
+}
+
+.about-text strong {
+  color: var(--green-dark);
+}
+
+.about-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-top: 8px;
+}
+
+.stat-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px 28px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.stat-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+}
+
+.stat-card h3 {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.stat-card p {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.stat-icon {
+  width: 36px;
+  height: 36px;
+  margin-bottom: 10px;
+  color: var(--green);
+}
+
+
+/* ═══════════════════════════════════════
+   MENTORS
+   ═══════════════════════════════════════ */
+.mentors {
+  background: var(--cream);
+  padding: 88px 0;
+}
+
+.mentors .section-title {
+  font-size: clamp(1.9rem, 3.8vw, 2.7rem);
+  margin-bottom: 52px;
+}
+
+.mentor-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.mentor-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 36px 32px;
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.mentor-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.07);
+}
+
+.mentor-avatar {
+  width: 88px;
+  height: 88px;
+  border-radius: 14px;
+  background: var(--sand);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+/* When real photos are added, use:
+   .mentor-avatar img { width:100%; height:100%; object-fit:cover; } */
+
+.mentor-avatar svg {
+  width: 60px;
+  height: 60px;
+}
+
+.mentor-info h3 {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+.mentor-info p {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+
+/* ═══════════════════════════════════════
+   CURRICULUM
+   ═══════════════════════════════════════ */
+.curriculum {
+  background: var(--sand);
+  padding: 88px 0;
+}
+
+.curriculum .section-title {
+  font-size: clamp(1.9rem, 3.8vw, 2.7rem);
+  margin-bottom: 12px;
+}
+
+.curriculum-intro {
+  font-size: 1.02rem;
+  color: var(--text-muted);
+  max-width: 720px;
+  margin-bottom: 48px;
+  line-height: 1.7;
+}
+
+.pillar-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.pillar-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 36px 28px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.pillar-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.07);
+}
+
+.pillar-icon {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 20px;
+  color: var(--green);
+}
+
+.pillar-card h3 {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 10px;
+}
+
+.pillar-card p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+}
+
+
+/* ═══════════════════════════════════════
+   WHY / SKILLS FOR LIFE
+   ═══════════════════════════════════════ */
+.why {
+  background: var(--cream);
+  padding: 88px 0;
+}
+
+.why-inner {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 56px;
+  align-items: center;
+}
+
+.why .section-title {
+  font-size: clamp(1.9rem, 3.8vw, 2.7rem);
+  margin-bottom: 10px;
+}
+
+.why-subtitle {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--green-light);
+  margin-bottom: 20px;
+}
+
+.why-text {
+  font-size: 1rem;
+  color: var(--text-muted);
+  line-height: 1.75;
+  margin-bottom: 32px;
+}
+
+.why-benefits {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.why-benefits li {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.benefit-icon {
+  width: 24px;
+  height: 24px;
+  color: var(--green);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.benefit-content h4 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 2px;
+}
+
+.benefit-content p {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+}
+
+
+/* ═══════════════════════════════════════
+   SCHEDULE
+   ═══════════════════════════════════════ */
+.schedule {
+  background: var(--sand);
+  padding: 88px 0;
+}
+
+.schedule .section-title {
+  font-size: clamp(1.9rem, 3.8vw, 2.7rem);
+  margin-bottom: 12px;
+}
+
+.schedule-intro {
+  font-size: 1.02rem;
+  color: var(--text-muted);
+  margin-bottom: 48px;
+  line-height: 1.7;
+  max-width: 680px;
+}
+
+.week-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-bottom: 28px;
+}
+
+.week-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 28px 22px;
+  text-align: center;
+  position: relative;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.week-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+}
+
+.week-num {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--green);
+  margin-bottom: 8px;
+}
+
+.week-card p {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* Connecting line between weeks */
+.week-connector {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+  margin-bottom: 20px;
+}
+
+.connector-line {
+  flex: 1;
+  height: 2px;
+  background: linear-gradient(90deg, var(--green), var(--green-light));
+  border-radius: 1px;
+  position: relative;
+}
+
+.connector-line::after {
+  content: '';
+  position: absolute;
+  right: -4px;
+  top: -3px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--green);
+}
+
+.schedule-note {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+
+/* ═══════════════════════════════════════
+   WHO SHOULD JOIN
+   ═══════════════════════════════════════ */
+.audience {
+  background: var(--cream);
+  padding: 88px 0;
+}
+
+.audience .section-title {
+  font-size: clamp(1.9rem, 3.8vw, 2.7rem);
+  margin-bottom: 48px;
+}
+
+.persona-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.persona-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 36px 28px;
+  text-align: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.persona-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.07);
+}
+
+.persona-emoji {
+  font-size: 2.4rem;
+  margin-bottom: 16px;
+}
+
+.persona-card h3 {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+.persona-card p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+
+/* ═══════════════════════════════════════
+   COMMUNITY
+   ═══════════════════════════════════════ */
+.community {
+  background: var(--sand);
+  padding: 88px 0;
+}
+
+.community-inner {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 56px;
+  align-items: center;
+}
+
+.community .section-title {
+  font-size: clamp(1.9rem, 3.8vw, 2.7rem);
+  margin-bottom: 20px;
+}
+
+.community-text {
+  font-size: 1rem;
+  color: var(--text-muted);
+  line-height: 1.75;
+  margin-bottom: 8px;
+}
+
+.community-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.community-stat {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+  text-align: center;
+}
+
+.community-stat .big-num {
+  font-family: var(--font-heading);
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--green);
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.community-stat p {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+
+/* ═══════════════════════════════════════
+   QUOTE
+   ═══════════════════════════════════════ */
+.quote-section {
+  background: var(--sand);
+  padding: 72px 0;
+  text-align: center;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.quote-text {
+  font-family: var(--font-heading);
+  font-size: clamp(1.2rem, 2.5vw, 1.65rem);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--text);
+  max-width: 720px;
+  margin: 0 auto 16px;
+  line-height: 1.55;
+}
+
+.quote-attr {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+}
+
+
+/* ═══════════════════════════════════════
+   CTA
+   ═══════════════════════════════════════ */
+.cta {
+  background: var(--cream);
+  padding: 88px 0;
+  text-align: center;
+}
+
+.cta .section-title {
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  margin-bottom: 16px;
+}
+
+.cta-sub {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  max-width: 640px;
+  margin: 0 auto 28px;
+  line-height: 1.7;
+}
+
+.cta-notice {
+  background: var(--mint);
+  border-radius: 10px;
+  padding: 18px 28px;
+  max-width: 620px;
+  margin: 0 auto 32px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-align: left;
+}
+
+.cta-notice svg {
+  width: 22px;
+  height: 22px;
+  color: var(--green);
+  flex-shrink: 0;
+}
+
+.cta-notice p {
+  font-size: 0.92rem;
+  color: var(--green-dark);
+  line-height: 1.5;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+
+/* ═══════════════════════════════════════
+   FOOTER
+   ═══════════════════════════════════════ */
+.footer {
+  background: var(--sand);
+  border-top: 1px solid var(--border);
+  padding: 32px 0;
+  text-align: center;
+}
+
+.footer p {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+
+/* ═══════════════════════════════════════
+   STICKY HEADER
+   ═══════════════════════════════════════ */
+.sticky-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: rgba(253,251,247,0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+  padding: 12px 0;
+  transform: translateY(-100%);
+  transition: transform 0.35s ease;
+}
+
+.sticky-header.visible {
+  transform: translateY(0);
+}
+
+.sticky-header-inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sticky-logo {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: var(--green);
+}
+
+.sticky-header .btn {
+  padding: 9px 22px;
+  font-size: 0.82rem;
+}
+
+
+/* ═══════════════════════════════════════
+   MENTOR BADGE
+   ═══════════════════════════════════════ */
+.mentor-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--white);
+  border: 1.5px solid var(--green);
+  border-radius: 8px;
+  padding: 10px 18px;
+  margin-top: 32px;
+}
+
+.mentor-badge svg {
+  width: 20px;
+  height: 20px;
+  color: var(--green);
+  flex-shrink: 0;
+}
+
+.mentor-badge span {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--green);
+  letter-spacing: 0.02em;
+}
+
+
+/* ═══════════════════════════════════════
+   FAQ ACCORDION
+   ═══════════════════════════════════════ */
+.faq {
+  background: var(--cream);
+  padding: 88px 0;
+}
+
+.faq .section-title {
+  font-size: clamp(1.9rem, 3.8vw, 2.7rem);
+  margin-bottom: 48px;
+}
+
+.faq-list {
+  max-width: 720px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.faq-item {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: box-shadow 0.25s ease;
+}
+
+.faq-item:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+}
+
+.faq-question {
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 20px 24px;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text);
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.faq-question:hover {
+  color: var(--green);
+}
+
+.faq-chevron {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+  color: var(--text-muted);
+}
+
+.faq-item.open .faq-chevron {
+  transform: rotate(180deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease, padding 0.35s ease;
+}
+
+.faq-item.open .faq-answer {
+  max-height: 200px;
+}
+
+.faq-answer-inner {
+  padding: 0 24px 20px;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+
+/* ═══════════════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════════════ */
+@media (max-width: 900px) {
+  .hero-inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .hero-illustration { display: none; }
+  .hero-buttons { justify-content: center; }
+  .about-inner { grid-template-columns: 1fr; }
+  .mentor-grid { grid-template-columns: 1fr; }
+  .pillar-grid { grid-template-columns: 1fr; }
+  .why-inner { grid-template-columns: 1fr; }
+  .week-grid { grid-template-columns: 1fr 1fr; }
+  .persona-grid { grid-template-columns: 1fr; }
+  .community-inner { grid-template-columns: 1fr; }
+  .community-stats { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 500px) {
+  .hero { padding: 64px 0 48px; }
+  .about, .mentors, .curriculum, .why, .schedule, .audience, .community, .cta, .faq {
+    padding: 64px 0;
+  }
+  .week-grid { grid-template-columns: 1fr; }
+  .community-stats { grid-template-columns: 1fr; }
+  .mentor-card { flex-direction: column; align-items: center; text-align: center; }
+  .stat-card, .pillar-card, .persona-card, .week-card { padding: 24px 20px; }
+  .sticky-logo { font-size: 1rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════════ STICKY HEADER ═══════════ -->
+<header class="sticky-header" id="stickyHeader">
+  <div class="sticky-header-inner">
+    <span class="sticky-logo">Find Your Voice</span>
+    <a href="#register" class="btn btn-primary">Register</a>
+  </div>
+</header>
+
+<!-- ═══════════ HERO ═══════════ -->
+<section class="hero">
+  <div class="hero-confetti">
+    <span class="confetti-dot" style="width:8px;height:8px;background:var(--coral);top:15%;left:8%;animation-delay:0s;"></span>
+    <span class="confetti-dot" style="width:6px;height:6px;background:var(--green-light);top:25%;left:22%;animation-delay:1.5s;"></span>
+    <span class="confetti-dot" style="width:10px;height:10px;background:var(--coral);top:10%;right:18%;animation-delay:0.8s;"></span>
+    <span class="confetti-dot" style="width:5px;height:5px;background:var(--green);top:35%;right:10%;animation-delay:2.2s;"></span>
+    <span class="confetti-dot" style="width:7px;height:7px;background:var(--border);top:20%;left:55%;animation-delay:3s;"></span>
+    <span class="confetti-dot" style="width:9px;height:9px;background:var(--coral);top:40%;left:75%;animation-delay:1s;"></span>
+  </div>
+
+  <div class="container hero-inner">
+    <div class="hero-text">
+      <h1>Find Your Voice.<br>Change Your World.</h1>
+      <p class="hero-sub">Summer 2026 Cohort &middot; Porter Ranch, Los Angeles &middot; Grades 3&ndash;8</p>
+      <div class="hero-buttons">
+        <a href="#register" class="btn btn-primary">Register for the Cohort</a>
+        <a href="#about" class="btn btn-outline">Learn More</a>
+      </div>
+    </div>
+
+    <div class="hero-illustration">
+      <!-- Podium with laurel wreath illustration -->
+      <svg viewBox="0 0 300 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Laurel left -->
+        <g opacity="0.85">
+          <path d="M95 100c-8-20-25-35-45-40 10 18 18 38 20 58" stroke="#4a6e49" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          <ellipse cx="62" cy="75" rx="12" ry="7" fill="#4a6e49" opacity="0.25" transform="rotate(-30 62 75)"/>
+          <ellipse cx="55" cy="95" rx="11" ry="6" fill="#4a6e49" opacity="0.3" transform="rotate(-20 55 95)"/>
+          <ellipse cx="58" cy="115" rx="10" ry="6" fill="#4a6e49" opacity="0.35" transform="rotate(-10 58 115)"/>
+          <ellipse cx="65" cy="132" rx="10" ry="6" fill="#4a6e49" opacity="0.3" transform="rotate(-5 65 132)"/>
+          <ellipse cx="75" cy="148" rx="9" ry="5" fill="#4a6e49" opacity="0.25" transform="rotate(0 75 148)"/>
+        </g>
+        <!-- Laurel right -->
+        <g opacity="0.85">
+          <path d="M205 100c8-20 25-35 45-40-10 18-18 38-20 58" stroke="#4a6e49" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          <ellipse cx="238" cy="75" rx="12" ry="7" fill="#4a6e49" opacity="0.25" transform="rotate(30 238 75)"/>
+          <ellipse cx="245" cy="95" rx="11" ry="6" fill="#4a6e49" opacity="0.3" transform="rotate(20 245 95)"/>
+          <ellipse cx="242" cy="115" rx="10" ry="6" fill="#4a6e49" opacity="0.35" transform="rotate(10 242 115)"/>
+          <ellipse cx="235" cy="132" rx="10" ry="6" fill="#4a6e49" opacity="0.3" transform="rotate(5 235 132)"/>
+          <ellipse cx="225" cy="148" rx="9" ry="5" fill="#4a6e49" opacity="0.25" transform="rotate(0 225 148)"/>
+        </g>
+        <!-- Podium body -->
+        <rect x="110" y="155" width="80" height="100" rx="8" fill="#3b5a3a"/>
+        <rect x="105" y="148" width="90" height="14" rx="4" fill="#4a6e49"/>
+        <rect x="100" y="250" width="100" height="12" rx="4" fill="#4a6e49"/>
+        <!-- Podium face -->
+        <circle cx="140" cy="190" r="3" fill="#faf8f5"/>
+        <circle cx="160" cy="190" r="3" fill="#faf8f5"/>
+        <path d="M138 202c4 5 16 5 20 0" stroke="#faf8f5" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <!-- Microphone -->
+        <line x1="150" y1="148" x2="150" y2="120" stroke="#2D2D2D" stroke-width="2.5"/>
+        <circle cx="150" cy="114" r="8" fill="#5f6368"/>
+        <path d="M143 114c0-6 14-6 14 0" stroke="#2D2D2D" stroke-width="1.5" fill="none"/>
+        <!-- Stars -->
+        <g fill="#d4a892" opacity="0.7">
+          <polygon points="150,40 153,48 161,48 155,53 157,61 150,56 143,61 145,53 139,48 147,48"/>
+          <polygon points="100,55 102,59 106,59 103,62 104,66 100,63 96,66 97,62 94,59 98,59" transform="scale(0.7) translate(40,20)"/>
+          <polygon points="220,50 222,54 226,54 223,57 224,61 220,58 216,61 217,57 214,54 218,54" transform="scale(0.6) translate(100,25)"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════ ABOUT ═══════════ -->
+<section class="about" id="about">
+  <div class="container about-inner">
+    <div class="about-content reveal">
+      <span class="section-label">About the Program</span>
+      <h2 class="section-title">A Student-Led Movement, Built for Young Voices</h2>
+      <p class="about-text">
+        The <strong>Summer Intensive Speech &amp; Debate</strong> program is a 100% volunteer initiative conceived and led by student mentors <strong>Sriram Surapaneni</strong> and <strong>Maira Lala</strong>. Their mission is simple: give every young person in Porter Ranch the tools to think critically, speak confidently, and argue persuasively.
+        <br><br>
+        No fees. No barriers. Just rigorous, joyful learning from mentors who've been in the room and want to bring others with them.
+      </p>
+    </div>
+    <div class="about-stats reveal">
+      <div class="stat-card">
+        <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M8 12l3 3 5-5"/></svg>
+        <h3>100% Volunteer</h3>
+        <p>Entirely community-driven, at no cost to families</p>
+      </div>
+      <div class="stat-card">
+        <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+        <h3>Student Mentors</h3>
+        <p>Led by experienced, passionate young leaders</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════ MENTORS ═══════════ -->
+<section class="mentors">
+  <div class="container">
+    <div class="reveal">
+      <span class="section-label">Meet the Mentors</span>
+      <h2 class="section-title">Guided by Peers Who've Walked the Stage</h2>
+    </div>
+    <div class="mentor-grid reveal">
+      <!-- Sriram -->
+      <div class="mentor-card">
+        <div class="mentor-avatar">
+          <!-- Placeholder avatar — replace with: <img src="sriram.jpg" alt="Sriram Surapaneni"> -->
+          <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="30" cy="22" r="12" fill="#3b5a3a" opacity="0.15"/>
+            <circle cx="30" cy="22" r="10" fill="#e5e0d8"/>
+            <circle cx="26" cy="20" r="1.5" fill="#2D2D2D"/>
+            <circle cx="34" cy="20" r="1.5" fill="#2D2D2D"/>
+            <path d="M26 26c2 3 6 3 8 0" stroke="#2D2D2D" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+            <path d="M18 21c0-8 6-14 12-14s12 6 12 14" stroke="#2D2D2D" stroke-width="1.5" fill="none"/>
+            <rect x="18" y="38" width="24" height="18" rx="4" fill="#3b5a3a" opacity="0.2"/>
+            <line x1="30" y1="32" x2="30" y2="40" stroke="#3b5a3a" stroke-width="1.5"/>
+          </svg>
+        </div>
+        <div class="mentor-info">
+          <h3>Sriram Surapaneni</h3>
+          <p>A competitive debater with years of tournament experience, Sriram brings sharp strategy, clear structure, and infectious enthusiasm to every session. He believes every student has a compelling argument waiting to be made.</p>
+        </div>
+      </div>
+      <!-- Maira -->
+      <div class="mentor-card">
+        <div class="mentor-avatar">
+          <!-- Placeholder avatar — replace with: <img src="maira.jpg" alt="Maira Lala"> -->
+          <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="30" cy="22" r="12" fill="#d4a892" opacity="0.15"/>
+            <circle cx="30" cy="22" r="10" fill="#e5e0d8"/>
+            <circle cx="26" cy="20" r="1.5" fill="#2D2D2D"/>
+            <circle cx="34" cy="20" r="1.5" fill="#2D2D2D"/>
+            <path d="M26 26c2 3 6 3 8 0" stroke="#2D2D2D" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+            <path d="M16 24c0-10 6-17 14-17s14 7 14 17" stroke="#2D2D2D" stroke-width="1.5" fill="none"/>
+            <path d="M20 24c-2 4-3 8-2 12" stroke="#2D2D2D" stroke-width="1.2" fill="none"/>
+            <path d="M40 24c2 4 3 8 2 12" stroke="#2D2D2D" stroke-width="1.2" fill="none"/>
+            <rect x="18" y="38" width="24" height="18" rx="4" fill="#d4a892" opacity="0.2"/>
+            <line x1="30" y1="32" x2="30" y2="40" stroke="#d4a892" stroke-width="1.5"/>
+          </svg>
+        </div>
+        <div class="mentor-info">
+          <h3>Maira Lala</h3>
+          <p>A seasoned public speaker and community advocate, Maira helps students discover their authentic voice. Her warmth and clarity make even the shyest student feel ready to take the floor.</p>
+        </div>
+      </div>
+    </div>
+    <div class="reveal" style="text-align:center;">
+      <div class="mentor-badge">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.27 5.82 21 7 14.14l-5-4.87 6.91-1.01z"/></svg>
+        <span>Tournament-Tested Mentors &middot; Combined Years of Competitive Experience</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════ CURRICULUM ═══════════ -->
+<section class="curriculum">
+  <div class="container">
+    <div class="reveal">
+      <span class="section-label">The Curriculum</span>
+      <h2 class="section-title">What Students Will Learn</h2>
+      <p class="curriculum-intro">Our intensive curriculum builds real-world skills across three core pillars &mdash; from crafting a compelling argument to holding your own on a competitive stage.</p>
+    </div>
+    <div class="pillar-grid reveal">
+      <div class="pillar-card">
+        <svg class="pillar-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="24" cy="36" r="8" stroke="currentColor" stroke-width="2.5" fill="none"/>
+          <path d="M24 28V14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+          <path d="M16 20l8-6 8 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          <path d="M12 10l4 4M36 10l-4 4M24 4v6" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+        </svg>
+        <h3>Persuasive Speaking</h3>
+        <p>Students learn the art of rhetoric &mdash; how to structure a speech, command an audience, and deliver ideas with clarity and confidence.</p>
+      </div>
+      <div class="pillar-card">
+        <svg class="pillar-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="24" cy="24" r="16" stroke="currentColor" stroke-width="2.5" fill="none"/>
+          <circle cx="24" cy="24" r="6" stroke="currentColor" stroke-width="2" fill="none"/>
+          <path d="M24 8v4M24 36v4M8 24h4M36 24h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <path d="M14 14l3 3M31 31l3 3M14 34l3-3M31 17l3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
+        </svg>
+        <h3>Research Skills</h3>
+        <p>From finding credible sources to synthesizing complex information, students develop the critical thinking foundation that powers every great argument.</p>
+      </div>
+      <div class="pillar-card">
+        <svg class="pillar-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="14" cy="20" r="8" stroke="currentColor" stroke-width="2.5" fill="none"/>
+          <circle cx="34" cy="20" r="8" stroke="currentColor" stroke-width="2.5" fill="none"/>
+          <path d="M14 28v10M34 28v10" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+          <path d="M20 22h8" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+          <path d="M22 18h4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity="0.3"/>
+          <path d="M10 42h28" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity="0.4"/>
+        </svg>
+        <h3>Competitive Debate</h3>
+        <p>Students engage in structured debate formats, learning to listen actively, rebut effectively, and think on their feet under real pressure.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════ WHY ═══════════ -->
+<section class="why">
+  <div class="container why-inner">
+    <div class="reveal">
+      <span class="section-label">Skills for Life</span>
+      <h2 class="section-title">Beyond the Summer</h2>
+      <p class="why-subtitle">Skills That Last a Lifetime</p>
+      <p class="why-text">Research consistently shows that students who practice public speaking demonstrate stronger academic performance, greater self-confidence, and more advanced critical thinking. These are the skills colleges and careers reward.</p>
+      <ul class="why-benefits">
+        <li>
+          <svg class="benefit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>
+          <div class="benefit-content">
+            <h4>Confidence in any room</h4>
+            <p>Speak up in class, interviews, and life</p>
+          </div>
+        </li>
+        <li>
+          <svg class="benefit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>
+          <div class="benefit-content">
+            <h4>Stronger academic writing</h4>
+            <p>Argumentation sharpens essays and analysis</p>
+          </div>
+        </li>
+        <li>
+          <svg class="benefit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>
+          <div class="benefit-content">
+            <h4>Leadership presence</h4>
+            <p>Command attention and inspire action</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="reveal" style="display:flex;align-items:center;justify-content:center;">
+      <!-- Decorative illustration -->
+      <svg viewBox="0 0 260 260" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:260px;opacity:0.9;">
+        <circle cx="130" cy="130" r="110" fill="#3b5a3a" opacity="0.06"/>
+        <circle cx="130" cy="130" r="80" fill="#3b5a3a" opacity="0.06"/>
+        <!-- Open book -->
+        <path d="M80 160c10-5 25-8 50-2v60c-25-6-40-3-50 2v-60z" fill="#3b5a3a" opacity="0.15" stroke="#3b5a3a" stroke-width="1.5"/>
+        <path d="M180 160c-10-5-25-8-50-2v60c25-6 40-3 50 2v-60z" fill="#3b5a3a" opacity="0.1" stroke="#3b5a3a" stroke-width="1.5"/>
+        <!-- Lightbulb -->
+        <circle cx="130" cy="90" r="24" stroke="#3b5a3a" stroke-width="2.5" fill="none"/>
+        <path d="M120 110h20v8h-20z" fill="#3b5a3a" opacity="0.2"/>
+        <path d="M122 118h16" stroke="#3b5a3a" stroke-width="1.5"/>
+        <path d="M130 66v8M108 78l5 5M152 78l-5 5" stroke="#d4a892" stroke-width="2" stroke-linecap="round"/>
+        <!-- Stars -->
+        <circle cx="180" cy="70" r="3" fill="#d4a892" opacity="0.6"/>
+        <circle cx="75" cy="100" r="2.5" fill="#4a6e49" opacity="0.5"/>
+        <circle cx="190" cy="140" r="2" fill="#d4a892" opacity="0.4"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════ SCHEDULE ═══════════ -->
+<section class="schedule">
+  <div class="container">
+    <div class="reveal">
+      <span class="section-label">Program Schedule</span>
+      <h2 class="section-title">July 2026 Intensive &mdash; Mark Your Calendar</h2>
+      <p class="schedule-intro">The Summer Intensive runs throughout July 2026 in Porter Ranch. Sessions are structured to be engaging and focused, with each week building on the last.</p>
+    </div>
+    <div class="week-grid reveal">
+      <div class="week-card">
+        <div class="week-num">Week 1</div>
+        <p>Foundations of public speaking</p>
+      </div>
+      <div class="week-card">
+        <div class="week-num">Week 2</div>
+        <p>Research and argumentation skills</p>
+      </div>
+      <div class="week-card">
+        <div class="week-num">Week 3</div>
+        <p>Debate formats and practice</p>
+      </div>
+      <div class="week-card">
+        <div class="week-num">Week 4</div>
+        <p>Showcase and final presentations</p>
+      </div>
+    </div>
+    <p class="schedule-note reveal">Exact dates, times, and venue details will be confirmed upon registration. Expect multiple sessions per week, designed to fit summer schedules.</p>
+  </div>
+</section>
+
+
+<!-- ═══════════ AUDIENCE ═══════════ -->
+<section class="audience">
+  <div class="container">
+    <div class="reveal">
+      <span class="section-label">Who Should Join</span>
+      <h2 class="section-title">Built for Every Student, Grades 3 Through 8</h2>
+    </div>
+    <div class="persona-grid reveal">
+      <div class="persona-card">
+        <div class="persona-emoji">&#x1F330;</div>
+        <h3>The Shy Student</h3>
+        <p>Who has great ideas but hasn't found the courage to share them yet</p>
+      </div>
+      <div class="persona-card">
+        <div class="persona-emoji">&#x1F3A4;</div>
+        <h3>The Natural Talker</h3>
+        <p>Who needs the structure and strategy to channel their energy effectively</p>
+      </div>
+      <div class="persona-card">
+        <div class="persona-emoji">&#x1F31F;</div>
+        <h3>The Future Leader</h3>
+        <p>Who wants to compete, persuade, and make a real difference someday</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════ COMMUNITY ═══════════ -->
+<section class="community">
+  <div class="container community-inner">
+    <div class="reveal">
+      <span class="section-label">Community</span>
+      <h2 class="section-title">Rooted in Porter Ranch. Open to All.</h2>
+      <p class="community-text">This program was born from a shared belief that every child in our community deserves access to world-class communication training &mdash; regardless of background or experience. No prior speech or debate experience is required to join.</p>
+      <p class="community-text">Students from all schools in and around Porter Ranch are warmly welcome. Cohort sizes are intentionally kept small to ensure personalized attention for every participant.</p>
+    </div>
+    <div class="community-stats reveal">
+      <div class="community-stat">
+        <div class="big-num">6</div>
+        <p>Grade Levels<br>Open to Grades 3&ndash;8</p>
+      </div>
+      <div class="community-stat">
+        <div class="big-num">$0</div>
+        <p>Program Cost<br>Completely free for all families</p>
+      </div>
+      <div class="community-stat">
+        <div class="big-num">4</div>
+        <p>Weeks of Training<br>Focused July 2026 intensive</p>
+      </div>
+      <div class="community-stat">
+        <div class="big-num">&#x2764;&#xFE0F;</div>
+        <p>Small Cohorts<br>Personalized attention</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════ QUOTE ═══════════ -->
+<section class="quote-section">
+  <div class="container reveal">
+    <p class="quote-text">&ldquo;The goal isn't to make every student a champion debater &mdash; it's to make every student brave enough to try.&rdquo;</p>
+    <p class="quote-attr">&mdash; Sriram Surapaneni &amp; Maira Lala, Program Co-Founders</p>
+  </div>
+</section>
+
+
+<!-- ═══════════ CTA ═══════════ -->
+<section class="cta" id="register">
+  <div class="container">
+    <div class="reveal">
+      <h2 class="section-title">Ready to Find Your Voice?</h2>
+      <p class="cta-sub">Spots for the Summer 2026 Cohort are limited. Secure your child's place in this one-of-a-kind, volunteer-led program today &mdash; and give them a skill they'll carry for the rest of their lives.</p>
+      <div class="cta-notice">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>
+        <p>Registration for the July 2026 Summer Intensive is now open. No experience necessary &mdash; just curiosity and a willingness to grow.</p>
+      </div>
+      <div class="cta-buttons">
+        <a href="#" class="btn btn-primary">Register for the Cohort</a>
+        <a href="#" class="btn btn-outline">Contact the Mentors</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════ FAQ ═══════════ -->
+<section class="faq">
+  <div class="container">
+    <div class="reveal">
+      <span class="section-label">Frequently Asked Questions</span>
+      <h2 class="section-title">Everything Parents Want to Know</h2>
+    </div>
+    <div class="faq-list reveal">
+      <div class="faq-item">
+        <button class="faq-question">
+          Does my child need to prepare anything before the first session?
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Not at all! Students just need to show up with curiosity and a willingness to participate. We start from the fundamentals in Week 1 and build from there. No prior speech or debate experience is needed.</div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">
+          What is the exact location in Porter Ranch?
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">The exact venue and address will be confirmed and shared with all registered families before the program begins. Sessions will be held at a community space in the Porter Ranch area of Los Angeles.</div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">
+          Can my child miss a week for vacation?
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">We understand summer plans can be busy! While we encourage attending all four weeks for the best learning experience, missing a session won't disqualify your child. We'll help them catch up when they return.</div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">
+          Is this really completely free?
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Yes, 100%. This is a volunteer initiative — there are no fees, no hidden costs, and no materials to purchase. Sriram and Maira created this program because they believe every student deserves access to these skills.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<footer class="footer">
+  <div class="container">
+    <p>Empowering young voices: A volunteer initiative by Maira Lala and Sriram Surapaneni</p>
+    <p style="margin-top:6px;opacity:0.7;">&copy; 2026 Find Your Voice. All rights reserved.</p>
+  </div>
+</footer>
+
+
+<script>
+// Scroll reveal animation
+(function() {
+  var reveals = document.querySelectorAll('.reveal');
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+  reveals.forEach(function(el) {
+    observer.observe(el);
+  });
+})();
+
+// Sticky header — show after scrolling past hero
+(function() {
+  var header = document.getElementById('stickyHeader');
+  var hero = document.querySelector('.hero');
+  var heroObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        header.classList.remove('visible');
+      } else {
+        header.classList.add('visible');
+      }
+    });
+  }, { threshold: 0 });
+  heroObserver.observe(hero);
+})();
+
+// FAQ accordion
+(function() {
+  var questions = document.querySelectorAll('.faq-question');
+  questions.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var item = this.parentElement;
+      var wasOpen = item.classList.contains('open');
+      // Close all
+      document.querySelectorAll('.faq-item.open').forEach(function(openItem) {
+        openItem.classList.remove('open');
+      });
+      // Toggle clicked
+      if (!wasOpen) {
+        item.classList.add('open');
+      }
+    });
+  });
+})();
+
+// Smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(function(link) {
+  link.addEventListener('click', function(e) {
+    var target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
+</script>
+
+</body>
+</html>
